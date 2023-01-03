@@ -3,6 +3,7 @@ services:
   pyspark-jupyter:
     build: ../pyspark-jupyter-lab
     image: easewithapachespark/pyspark-jupyter-lab
+    container_name: pyspark-jupyter-lab
     ports:
         - 8888:8888
         - 4040:4040
