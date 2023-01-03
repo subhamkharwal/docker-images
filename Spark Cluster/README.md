@@ -2,7 +2,9 @@
 
 Apache Spark Cluster with 1 master and 2 worker nodes. PySpark Jupyter Lab (pyspark-jupyter-lab) image needs to build up.
 
-###To start the cluster
+###To start the cluster and create containers
+
+docker compose build
 
 docker compose up
 
