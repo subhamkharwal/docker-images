@@ -46,6 +46,7 @@ RUN mv $SPARK_HOME/conf/spark-defaults.conf.template $SPARK_HOME/conf/spark-defa
 # Install Jupyter Lab and PySpark
 RUN pip install jupyterlab
 RUN pip install pyspark==3.3.0
+RUN pip install kafka-python=2.0.2
 
 # Change to working directory and clone git repo
 WORKDIR /home/jupyter
