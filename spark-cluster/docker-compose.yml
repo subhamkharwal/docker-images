@@ -1,7 +1,7 @@
 version: '3'
 services:
   pyspark-jupyter:
-    build: ./PySpark Jupyter Notebook
+    build: ../pyspark-jupyter-lab
     image: pyspark-jupyter-lab
     ports:
         - 8888:8888
