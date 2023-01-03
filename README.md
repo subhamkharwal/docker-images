@@ -1,2 +1,2 @@
-# docker-images
-Public Docker Images for popular services
+# Docker Images
+Creating public images for few of the popular services.
