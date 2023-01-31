@@ -2,9 +2,9 @@
 
 Kafka Cluster with Zookeeper and PySpark Notebook.
 
-###To start the cluster and create containers
+### To start the cluster and create containers
+    docker compose build
 
-docker compose build
-
-docker compose up
+Once Build is complete
+    docker compose up
 
