@@ -7,4 +7,4 @@ EaseWithApacheSpark notebooks provided to start with.
     docker build --tag easewithdata/pyspark-jupyter-lab .
 
 ### To create container from image
-    docker run -d --name jupyter-lab easewithdata/pyspark-jupyter-lab
+    docker run -d -p 8888:8888 -p 4040:4040 --name jupyter-lab easewithdata/pyspark-jupyter-lab
