@@ -44,11 +44,12 @@ RUN mv $SPARK_HOME/conf/log4j2.properties.template $SPARK_HOME/conf/log4j2.prope
 RUN mv $SPARK_HOME/conf/spark-defaults.conf.template $SPARK_HOME/conf/spark-defaults.conf
 RUN mv $SPARK_HOME/conf/spark-env.sh.template $SPARK_HOME/conf/spark-env.sh
 
-# Install Jupyter Lab, PySpark, Kafka & Delta Lake
+# Install Jupyter Lab, PySpark, Kafka, boto & Delta Lake
 RUN pip install jupyterlab
 RUN pip install pyspark==3.3.0
 RUN pip install kafka-python=2.0.2
 RUN pip install delta-spark=2.2.0
+RUN pip install boto=2.49.0
 
 # Change to working directory and clone git repo
 WORKDIR /home/jupyter
