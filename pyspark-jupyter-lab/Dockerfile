@@ -42,6 +42,7 @@ RUN export PATH
 # Fix configuration files
 RUN mv $SPARK_HOME/conf/log4j2.properties.template $SPARK_HOME/conf/log4j2.properties
 RUN mv $SPARK_HOME/conf/spark-defaults.conf.template $SPARK_HOME/conf/spark-defaults.conf
+RUN mv $SPARK_HOME/conf/spark-env.sh.template $SPARK_HOME/conf/spark-env.sh
 
 # Install Jupyter Lab, PySpark, Kafka & Delta Lake
 RUN pip install jupyterlab
