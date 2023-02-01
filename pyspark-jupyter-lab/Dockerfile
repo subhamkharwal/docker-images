@@ -17,6 +17,9 @@ RUN apt-get install ca-certificates-java && \
     apt-get clean && \
     update-ca-certificates -f;
 
+# Insatall nano
+RUN apt-get install nano
+
 # Setup JAVA_HOME -- useful for docker commandline
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 RUN export JAVA_HOME
