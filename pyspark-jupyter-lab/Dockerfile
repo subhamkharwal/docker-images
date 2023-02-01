@@ -19,7 +19,7 @@ RUN apt-get install ca-certificates-java && \
 
 # Insatall nano & vi
 RUN apt-get install -y nano && \
-    apt-get install -y vi;
+    apt-get install -y vim;
 
 # Setup JAVA_HOME -- useful for docker commandline
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
