@@ -53,7 +53,7 @@ RUN pip install jupyterlab
 RUN pip install pyspark==3.3.0
 RUN pip install kafka-python==2.0.2
 RUN pip install delta-spark==2.2.0
-RUN pip install boto==2.49.0
+RUN pip install boto3
 
 # Change to working directory and clone git repo
 WORKDIR /home/jupyter
