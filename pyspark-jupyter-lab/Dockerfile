@@ -61,5 +61,9 @@ WORKDIR /home/jupyter
 # Clone Ease with Apache Spark Repo to Start
 RUN git clone https://github.com/subhamkharwal/ease-with-apache-spark.git
 
+# Fix Jupyter logging issue
+RUN ipython profile create
+RUN echo "c.IPKernelApp.capture_fd_output = False" >> "/root/.ipython/profile_default/ipython_kernel_config.py"
+
 # Start the container with root privilages
 CMD ["python3", "-m", "jupyterlab", "--ip", "0.0.0.0", "--allow-root"]
