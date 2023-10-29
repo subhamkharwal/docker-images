@@ -16,8 +16,6 @@ services:
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     container_name: zookeeper
-    depends_on:
-      - zeppelin
     ports:
       - 2181:2181
     environment:
