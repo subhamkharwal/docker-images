@@ -30,7 +30,7 @@ services:
     ports:
       - "8081:8081"
     environment:
-      - "SPARK_MASTER=spark://spark-master:7077"
+      - "SPARK_MASTER=spark://bd-spark-master:7077"
     volumes:
         - spark_data:/data:rw
   bd-spark-worker-2:
@@ -41,7 +41,7 @@ services:
     ports:
       - "8082:8081"
     environment:
-      - "SPARK_MASTER=spark://spark-master:7077"
+      - "SPARK_MASTER=spark://bd-spark-master:7077"
     volumes:
         - spark_data:/data
   bd-spark-history-server:
