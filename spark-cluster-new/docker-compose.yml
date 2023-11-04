@@ -46,7 +46,7 @@ services:
     environment:
       - "SPARK_MASTER=spark://bd-spark-master:7077"
     volumes:
-        - spark_data:/data
+        - spark_data:/data:rw
   bd-spark-history-server:
       image: bde2020/spark-history-server:3.3.0-hadoop3.3
       container_name: bd-spark-history-server
