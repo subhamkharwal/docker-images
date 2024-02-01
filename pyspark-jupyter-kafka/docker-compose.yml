@@ -1,6 +1,6 @@
 version: '2'
 services:
-  pyspark-jupyter:
+  ed-pyspark-jupyter:
     image: jupyter/pyspark-notebook
     container_name: pyspark-jupyter-lab
     ports:
@@ -12,7 +12,7 @@ services:
     volumes:
       - streaming_data:/data:rw
 
-  zookeeper:
+  ed-zookeeper:
     image: confluentinc/cp-zookeeper:latest
     container_name: zookeeper
     ports:
@@ -21,7 +21,7 @@ services:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
 
-  kafka:
+  ed-kafka:
     image: confluentinc/cp-kafka:latest
     container_name: kafka
     depends_on:
