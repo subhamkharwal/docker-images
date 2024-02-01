@@ -1,8 +1,8 @@
 version: '2'
 services:
   ed-pyspark-jupyter:
-    image: jupyter/pyspark-notebook
-    container_name: pyspark-jupyter-lab
+    image: jupyter/pyspark-notebook:spark-3.3.0
+    container_name: ed-pyspark-jupyter-lab
     ports:
       - 8888:8888
       - 4040:4040
@@ -14,7 +14,7 @@ services:
 
   ed-zookeeper:
     image: confluentinc/cp-zookeeper:latest
-    container_name: zookeeper
+    container_name: ed-zookeeper
     ports:
       - 2181:2181
     environment:
@@ -23,17 +23,17 @@ services:
 
   ed-kafka:
     image: confluentinc/cp-kafka:latest
-    container_name: kafka
+    container_name: ed-kafka
     depends_on:
-      - zookeeper
+      - ed-zookeeper
     ports:
       - 9092:9092
     volumes:
       - streaming_data:/data:rw
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://127.0.0.1:9092
+      KAFKA_ZOOKEEPER_CONNECT: ed-zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://ed-kafka:29092,PLAINTEXT_HOST://127.0.0.1:9092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
