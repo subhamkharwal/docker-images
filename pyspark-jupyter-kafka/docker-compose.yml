@@ -2,6 +2,7 @@ version: '2'
 services:
   ed-pyspark-jupyter:
     image: jupyter/pyspark-notebook:spark-3.3.0
+    user: root
     container_name: ed-pyspark-jupyter-lab
     ports:
       - 8888:8888
@@ -9,6 +10,7 @@ services:
     environment:
       JUPYTER_PORT: 8888
       SPARK_UI_PORT: 4040
+      GRANT_SUDO: yes
     volumes:
       - streaming_data:/data:rw
 
