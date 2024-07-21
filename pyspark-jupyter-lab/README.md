@@ -1,4 +1,4 @@
-# PySpark Jupyter Lab Notebook
+# PySpark Jupyter Lab Notebook - Python v3.10
 
 Jupyter Lab Notebook with root access.
 EaseWithApacheSpark notebooks provided to start with.
