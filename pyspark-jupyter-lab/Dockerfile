@@ -1,11 +1,14 @@
 # Base Python 3.10 image
-FROM python:3.10
+FROM python:3.10-bullseye
 
 # Expose Port
 EXPOSE 8888 4040
 
 # Change shell to /bin/bash
 SHELL ["/bin/bash", "-c"]
+
+# Upgrade pip
+RUN pip install --upgrade pip
 
 # Install OpenJDK
 RUN apt-get update && \
