@@ -1,7 +1,6 @@
 version: '3'
 services:
   bd-pyspark-jupyter:
-    build: ../pyspark-jupyter-lab-old
     image: easewithdata/pyspark-jupyter-lab-old
     container_name: pyspark-jupyter-lab-old
     ports:
