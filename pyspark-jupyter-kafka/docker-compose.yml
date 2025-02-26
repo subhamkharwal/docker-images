@@ -1,7 +1,7 @@
 version: '2'
 services:
   ed-pyspark-jupyter:
-    image: jupyter/pyspark-notebook:spark-3.3.0
+    image: easewithdata/pyspark-jupyter-lab
     user: root
     container_name: ed-pyspark-jupyter-lab
     ports:
