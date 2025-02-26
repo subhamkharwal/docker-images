@@ -1,7 +1,6 @@
 version: '2'
 services:
   pyspark-jupyter:
-    build: ../pyspark-jupyter-lab
     image: easewithdata/pyspark-jupyter-lab
     container_name: pyspark-jupyter-lab
     ports:
