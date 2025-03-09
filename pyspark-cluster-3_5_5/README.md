@@ -64,7 +64,15 @@ spark.range(10).show()
 
 ![img_3.png](readme_docs/img_3.png)
 
-
+####Note
+In case issues, please install the below python libraries before using Spark Connect
+```
+pip install pandas
+pip install pyarrow
+pip install grpcio
+pip install protobuf
+pip install grpcio-status
+```
 
 ### References & Credits
 1. **Ease With Data YouTube Channel (https://youtube.com/@easewithdata)**
