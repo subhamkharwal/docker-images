@@ -64,7 +64,7 @@ spark.range(10).show()
 
 ![img_3.png](readme_docs/img_3.png)
 
-####Note
+#### Note
 In case of issues, install the below python libraries before using Spark Connect
 ```
 pip install pandas
