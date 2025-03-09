@@ -65,7 +65,7 @@ spark.range(10).show()
 ![img_3.png](readme_docs/img_3.png)
 
 ####Note
-In case issues, please install the below python libraries before using Spark Connect
+In case of issues, install the below python libraries before using Spark Connect
 ```
 pip install pandas
 pip install pyarrow
