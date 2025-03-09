@@ -62,7 +62,7 @@ RUN pip install boto3
 WORKDIR /home/jupyter
 
 # Clone Ease with Apache Spark Repo to Start
-#RUN git clone https://github.com/subhamkharwal/ease-with-apache-spark.git
+RUN git clone https://github.com/subhamkharwal/ease-with-apache-spark.git
 
 # Download Spark Connect JAR
 RUN wget https://repo1.maven.org/maven2/org/apache/spark/spark-connect_2.12/3.5.5/spark-connect_2.12-3.5.5.jar

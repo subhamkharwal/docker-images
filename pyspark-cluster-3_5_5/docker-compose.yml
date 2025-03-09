@@ -1,36 +1,33 @@
 version: '3'
 services:
   ewd-pyspark-jupyter:
-    image: easewithdata/pyspark-jupyter_3_5_5
+    image: easewithdata/pyspark-jupyter:3.5.5
     container_name: ewd-pyspark-jupyterlab
-    command: bash -c "
-      /spark/sbin/start-connect-server.sh --jars /spark/jars/spark-connect_2.12-3.5.5.jar
-      && python3 -m jupyterlab --ip 0.0.0.0 --allow-root
-      "
     ports:
         - 8888:8888
         - 4040:4040
         - 4041:4041
-        - 4042:4042
-        - 15002:15002
     environment:
         JUPYTER_PORT: 8888
         SPARK_UI_PORT: 4040
     volumes:
         - spark_data:/data:rw
   ewd-spark-master:
-    image: easewithdata/spark-master_3_5_5:latest
+    image: easewithdata/spark-master:3.5.5
     #command: ln -s /usr/bin/python3 /usr/local/bin/python
     container_name: ewd-spark-master
     ports:
       - "8080:8080"
       - "7077:7077"
+      - 15002:15002
+      - 4050:4050
     environment:
       - INIT_DAEMON_STEP=setup_spark
     volumes:
         - spark_data:/data:rw
+
   ewd-spark-worker-1:
-    image: easewithdata/spark-worker_3_5_5:latest
+    image: easewithdata/spark-worker:3.5.5
     #command: ln -s /usr/bin/python3 /usr/local/bin/python
     container_name: ewd-spark-worker-1
     depends_on:
@@ -42,7 +39,7 @@ services:
     volumes:
         - spark_data:/data:rw
   ewd-spark-worker-2:
-    image: easewithdata/spark-worker_3_5_5:latest
+    image: easewithdata/spark-worker:3.5.5
     #command: ln -s /usr/bin/python3 /usr/local/bin/python
     container_name: ewd-spark-worker-2
     depends_on:
