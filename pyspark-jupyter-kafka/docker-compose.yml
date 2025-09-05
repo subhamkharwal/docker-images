@@ -42,7 +42,7 @@ services:
       KAFKA_CREATE_TOPICS: "raw:1:1"
 
   db:
-    image: postgres
+    image: postgres:17.6
     container_name: postgres-db
     ports:
       - '5432:5432'
