@@ -2,7 +2,7 @@ version: '3'
 services:
   bd-pyspark-jupyter:
     image: easewithdata/pyspark-jupyter-lab-old
-    container_name: pyspark-jupyter-lab-old
+    container_name: bd-pyspark-jupyter-lab
     ports:
         - 8888:8888
         - 4040:4040
