@@ -14,8 +14,14 @@ COPY wait-for-step.sh /
 COPY execute-step.sh /
 COPY finish-step.sh /
 
+# TARGETARCH is supplied automatically by buildx ("amd64" / "arm64").
+# The glibc-compat linker symlink only applies to amd64; on arm64 there is no
+# /lib64 and libc6-compat already provides /lib/ld-linux-aarch64.so.1.
+ARG TARGETARCH
 RUN apk add --no-cache curl bash openjdk8-jre python3 py-pip nss libc6-compat coreutils procps \
-      && ln -s /lib64/ld-linux-x86-64.so.2 /lib/ld-linux-x86-64.so.2 \
+      && if [ "$TARGETARCH" = "amd64" ]; then \
+           ln -s /lib64/ld-linux-x86-64.so.2 /lib/ld-linux-x86-64.so.2; \
+         fi \
       && chmod +x *.sh \
       && wget ${BASE_URL}/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
       && tar -xvzf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \

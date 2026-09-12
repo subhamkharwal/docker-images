@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   cf-zookeeper:
-    image: confluentinc/cp-zookeeper:latest
+    image: confluentinc/cp-zookeeper:7.5.3
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_SERVER_ID: 1
@@ -11,7 +11,7 @@ services:
 
 
   cf-kafka-1:
-    image: confluentinc/cp-kafka:latest
+    image: confluentinc/cp-kafka:7.5.3
     ports:
       - "9092:9092"
       - "29092:29092"
@@ -25,7 +25,7 @@ services:
       - cf-zookeeper
 
   cf-kafka-2:
-    image: confluentinc/cp-kafka:latest
+    image: confluentinc/cp-kafka:7.5.3
     ports:
       - "9093:9093"
       - "29093:29093"
@@ -39,7 +39,7 @@ services:
       - cf-zookeeper
 
   cf-kafka-3:
-    image: confluentinc/cp-kafka:latest
+    image: confluentinc/cp-kafka:7.5.3
     ports:
       - "9094:9094"
       - "29094:29094"
