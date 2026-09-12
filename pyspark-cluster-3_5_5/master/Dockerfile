@@ -1,4 +1,7 @@
-FROM easewithdata/spark-base:3.5.5
+# Base tag is overridable so the multi-arch build can chain onto the matching
+# multi-arch spark-base instead of the older amd64-only 3.5.5 image.
+ARG BASE_TAG=3.5.5
+FROM easewithdata/spark-base:${BASE_TAG}
 
 LABEL maintainer="Ease With Data <easewithdata@gmail.com> (Original 3.3.0 version published by bde2020)"
 
