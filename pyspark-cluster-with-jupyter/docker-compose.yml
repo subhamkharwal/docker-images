@@ -11,6 +11,7 @@ services:
         SPARK_UI_PORT: 4040
     volumes:
         - spark_data:/data:rw
+        - spark_data:/home/jupyter/data:rw
   bd-spark-master:
     image: bde2020/spark-master:3.3.0-hadoop3.3
     #command: ln -s /usr/bin/python3 /usr/local/bin/python
